@@ -44,20 +44,30 @@ p {
 h1 {
 	font-size: 30px;
 	line-height: 34px;
+	padding-top: 20px;
+	border-top: 1px solid #dfa92b;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #dfa92b;
 }
 
 h2 {
 	font-size: 20px;
 	line-height: 25px;
+	padding-top: 20px;
+	border-top: 1px solid #dfa92b;
 }
 
 h3 {
-	font-size: 16px;
+	font-size: 18px;
 	line-height: 27px;
 	padding-top: 15px;
-	padding-bottom: 15px;
-	border-bottom: 1px solid #D8D8D8;
-	border-top: 1px solid #D8D8D8;
+
+
+}
+
+p {
+	margin-bottom: 15px;
+	font-size: 14px;
 }
 
 hr {
