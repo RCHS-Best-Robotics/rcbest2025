@@ -6,6 +6,7 @@ GITHUB RULES DONT MESS THESE UP OR I WILL PUT YOU ON ENGINEERING NOTEBOOK
 IF YOUR GONNA SKIM THIS DOCUMENT READ THIS: DO NOT CLICK MERGE PULL REQUEST
 ALWAYS MAKE A NEW BRANCH WHEN UPLOADING
 NEVER MERGE YOUR OWN OR SOMEONE ELSE'S PULL REQUESTS
+CLONE THE REPOSITORY TO WORK ON, THEN SEND PUSH REQUESTS AS NEW BRANCHES TO INTEGRATE BACK IN, AS WELL AS KEEP YOUR CLONED REPOS UPDATED
 
 Note: if you are trying to use vscode for the robot, you need to directly open the robotcodepy file in your cloned repo as if you open it through the main repo file (whatever you have it cloned as) the terminal context will be incorrect and the vex library only works in the correct terminal context - there is no way to make it automatically change terminal contexts in attempting to open it through the main repo file I spent an entire Saturday trying.
 
