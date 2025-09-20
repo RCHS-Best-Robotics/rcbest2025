@@ -1,15 +1,8 @@
 {
-    // Let the VEX extension manage the Python interpreter
-    "python.pythonPath": "",
-
-    // Default terminal per OS (must be a valid built-in terminal type)
-    "terminal.integrated.defaultProfile.osx": "zsh",
-    "terminal.integrated.defaultProfile.windows": "Command Prompt",
-    "terminal.integrated.defaultProfile.linux": "bash",
-
-    // Always open terminal in the project folder
-    "terminal.integrated.cwd": "${workspaceFolder}",
-
-    // Language server for better IntelliSense
-    "python.languageServer": "Pylance"
+	"python.pythonPath": "",
+	"terminal.integrated.cwd": "${workspaceFolder}",
+	"python.languageServer": "Pylance",
+	"python.analysis.stubPath": "/Users/aiden/Library/Application Support/Code/User/globalStorage/vexrobotics.vexcode/sdk/python/V5/V5_1_0_1_25/vexv5/stubs",
+	"python.analysis.diagnosticMode": "workspace",
+	"python.analysis.typeCheckingMode": "basic"
 }
