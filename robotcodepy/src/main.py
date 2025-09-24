@@ -12,8 +12,10 @@ from vex import *
 
 # Brain should be defined by default
 brain=Brain()
+controller = Controller()
+controller.rumble('..--')
 
-brain.screen.print("Hello V5")
+
 
 
         
