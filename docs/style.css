@@ -161,3 +161,16 @@ img {
       color: white;
       text-decoration: none;
     }
+
+	footer{
+      background-color: #7773ac;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+	  font-size: 15px;
+	  text-align: center;
+	  color: white;
+	  margin-top: 10px;
+	  padding-bottom: 5px;
+
+	}
