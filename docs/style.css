@@ -4,7 +4,7 @@
 	text-align: center;
 	font-size: 60px;
 	font-family: 'Open Sans', sans-serif;
-	margin-top: 35px;
+	margin-top: 0cqw;
 	margin-bottom: 20px;
 	line-height: 1em;
 }
@@ -60,15 +60,14 @@ h1 {
 h2 {
 	font-size: 40px;
 	line-height: 25px;
-	padding-top: 20px;
-	border-top: 1px solid #7773ac;
+	padding-top: 0px;
 	line-height: 1em;
 }
 
 h3 {
 	font-size: 30px;
 	line-height: 27px;
-	padding-top: 15px;
+	padding-top: px;
 
 
 }
@@ -162,14 +161,24 @@ img {
       text-decoration: none;
     }
 
-footer{      
-	background-color: #7773ac;      position: fixed;
+#footer{      
+	background-color: #7773ac;
     bottom: 0;
     width: 100%;
 	font-size: 15px;
 	text-align: center;
-	color: white;
+	color: aquamarine;
 	margin-top: 10px;
-	padding-bottom: 5px;
+	padding-bottom: 0px;
 
+}
+
+
+
+.text-box {
+  background-color: #7773ac21;
+  padding: 15px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 15px;
 }
