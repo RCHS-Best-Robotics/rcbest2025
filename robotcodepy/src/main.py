@@ -31,7 +31,7 @@ while run == True:
 
     if pos4!=0:
         VfwdR = pos3 + pos4
-        VfwdL = pos3 - pos4
+        VfwdL = pos3 + pos4
 
 
     
