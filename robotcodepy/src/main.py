@@ -14,7 +14,7 @@ from vex import *
 brain=Brain()
 controller = Controller()
 left_motor = Motor(Ports.PORT5, GearSetting.RATIO_18_1, True)
-right_motor = Motor(Ports.PORT4, GearSetting.RATIO_18_1, True)
+right_motor = Motor(Ports.PORT6, GearSetting.RATIO_18_1, True)
 left_motor.spin(DirectionType.FORWARD)
 right_motor.spin(DirectionType.FORWARD)
 
@@ -26,8 +26,13 @@ while run == True:
     pos2 = int(controller.axis2.position())
     pos3 = int(controller.axis3.position())
     pos4 = int(controller.axis4.position())
-    VfwdL = pos3 - pos4
-    VfwdR = -(pos3 - pos4)
+    VfwdL = pos3
+    VfwdR = -pos3
+
+    if pos4!=0:
+        VfwdR = pos3 + pos4
+        VfwdL = pos3 - pos4
+
 
     
     left_motor.set_velocity(VfwdL, PERCENT)
