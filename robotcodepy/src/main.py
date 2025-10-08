@@ -23,6 +23,18 @@ right_motor.spin(DirectionType.FORWARD)
 big_arm_motor.spin(DirectionType.FORWARD)
 small_arm_motor.spin(DirectionType.FORWARD)
 
+def bigarmup():
+    big_arm_motor.set_velocity(50, PERCENT)
+
+def bigarmdown():
+    big_arm_motor.set_velocity(-50, PERCENT)
+
+def smallarmclockwise():
+    small_arm_motor.set_velocity(-50, PERCENT)
+
+def smallarmcounterclockwise():
+    small_arm_motor.set_velocity(50, PERCENT)
+
 test = False
 run = True
 
@@ -43,10 +55,11 @@ while run == True:
     left_motor.set_velocity(VfwdL, PERCENT)
     right_motor.set_velocity(VfwdR, PERCENT)
 
-    controller.buttonX.pressed(lambda: big_arm_motor.set_velocity(50, PERCENT))
-    controller.buttonB.pressed(lambda: big_arm_motor.set_velocity(-50, PERCENT))
-    controller.buttonY.pressed(lambda: small_arm_motor.set_velocity(-50, PERCENT))
-    controller.buttonA.pressed(lambda: small_arm_motor.set_velocity(50, PERCENT))
+    controller.buttonX.pressed(bigarmup)
+    controller.buttonX.pressed(bigarmdown)
+    controller.buttonX.pressed(smallarmclockwise)
+    controller.buttonX.pressed(smallarmcounterclockwise)
+
     brain.screen.print("1: ",pos1,"; 2: ",pos2)
     brain.screen.print("; 4: ",pos4,"; 3: ",pos3)
     brain.screen.clear_row(1)
@@ -66,4 +79,3 @@ while test == True:
     brain.screen.clear_row(1)
     brain.screen.set_cursor(1,1)
     wait(20, MSEC)
-
