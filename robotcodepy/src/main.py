@@ -15,8 +15,13 @@ brain=Brain()
 controller = Controller()
 left_motor = Motor(Ports.PORT5, GearSetting.RATIO_18_1, True)
 right_motor = Motor(Ports.PORT6, GearSetting.RATIO_18_1, True)
+big_arm_motor = Motor(Ports.PORT10, GearSetting.RATIO_18_1, True)
+small_arm_motor = Motor(Ports.PORT9, GearSetting.RATIO_18_1, True)
+
 left_motor.spin(DirectionType.FORWARD)
 right_motor.spin(DirectionType.FORWARD)
+big_arm_motor.spin(DirectionType.FORWARD)
+small_arm_motor.spin(DirectionType.FORWARD)
 
 test = False
 run = True
@@ -38,6 +43,10 @@ while run == True:
     left_motor.set_velocity(VfwdL, PERCENT)
     right_motor.set_velocity(VfwdR, PERCENT)
 
+    controller.buttonX.pressed(lambda: big_arm_motor.set_velocity(50, PERCENT))
+    controller.buttonB.pressed(lambda: big_arm_motor.set_velocity(-50, PERCENT))
+    controller.buttonY.pressed(lambda: small_arm_motor.set_velocity(-50, PERCENT))
+    controller.buttonA.pressed(lambda: small_arm_motor.set_velocity(50, PERCENT))
     brain.screen.print("1: ",pos1,"; 2: ",pos2)
     brain.screen.print("; 4: ",pos4,"; 3: ",pos3)
     brain.screen.clear_row(1)
