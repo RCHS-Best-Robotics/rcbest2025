@@ -26,8 +26,8 @@ while run == True:
     pos2 = int(controller.axis2.position())
     pos3 = int(controller.axis3.position())
     pos4 = int(controller.axis4.position())
-    VfwdL = pos3
-    VfwdR = -(pos3)
+    VfwdL = pos3 - pos4
+    VfwdR = -(pos3 - pos4)
 
     
     left_motor.set_velocity(VfwdL, PERCENT)
