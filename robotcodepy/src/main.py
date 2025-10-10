@@ -25,18 +25,33 @@ small_arm_motor.spin(DirectionType.FORWARD)
 
 def bigarmup():
     big_arm_motor.set_velocity(50, PERCENT)
+    wait(500, MSEC)
+    big_arm_motor.stop()
 
 def bigarmdown():
     big_arm_motor.set_velocity(-50, PERCENT)
+    wait(500, MSEC)
+    big_arm_motor.stop()
 
 def smallarmclockwise():
     small_arm_motor.set_velocity(-50, PERCENT)
+    wait(500, MSEC)
+    big_arm_motor.stop()
 
 def smallarmcounterclockwise():
     small_arm_motor.set_velocity(50, PERCENT)
+    wait(500, MSEC)
+    big_arm_motor.stop()
+
 
 test = False
 run = True
+
+controller.buttonX.pressed(bigarmup)
+controller.buttonB.pressed(bigarmdown)
+controller.buttonY.pressed(smallarmclockwise)
+controller.buttonA.pressed(smallarmcounterclockwise)
+
 
 while run == True:
     pos1 = int(controller.axis1.position())
@@ -55,10 +70,8 @@ while run == True:
     left_motor.set_velocity(VfwdL, PERCENT)
     right_motor.set_velocity(VfwdR, PERCENT)
 
-    controller.buttonX.pressed(bigarmup)
-    controller.buttonX.pressed(bigarmdown)
-    controller.buttonX.pressed(smallarmclockwise)
-    controller.buttonX.pressed(smallarmcounterclockwise)
+    if(pos1 == 0):
+        big_arm_motor.set_velocity(pos2, PERCENT)
 
     brain.screen.print("1: ",pos1,"; 2: ",pos2)
     brain.screen.print("; 4: ",pos4,"; 3: ",pos3)
