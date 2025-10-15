@@ -221,7 +221,7 @@ body {
 
 #navlogo {
   height: 50px;
-  width: 50px;
+  width: auto;
   padding-top: 5px;
   padding-left: 5px;
   padding-right: 5px;
