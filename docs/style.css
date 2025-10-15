@@ -127,9 +127,8 @@ ul {
   font-size: 24px;
 }
 
-img {
+#gallery img {
   height: 200px;
-  width: 200px;
   width: auto;
   margin-right: 20px;
   margin-top: 10px;
@@ -137,8 +136,8 @@ img {
 
     #navigation {
       list-style-type: none;
-      margin: 0;
-      padding: 0;
+      margin: 0px;
+      padding: 0px;
       background-color: #7773ac;
       position: fixed;
       top: 0;
@@ -151,6 +150,7 @@ img {
     /* each nav item */
     #navigation li {
       border-right: 1px solid white;
+	  height: 50px;
     }
 
     #navigation li:last-child {
@@ -160,7 +160,8 @@ img {
     /* links */
     #navigation li a {
       display: block;
-      padding: 6px 10px;
+	  height: 50px;
+      padding: 15px 10px;
       color: white;
       text-decoration: none;
     }
@@ -209,4 +210,18 @@ body {
   background-color: #7773ac21;
   padding: 15px;
   border-radius: 5px;
+}
+
+
+
+
+
+#navlogo {
+  height: 50px;
+  width: 50px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+
 }

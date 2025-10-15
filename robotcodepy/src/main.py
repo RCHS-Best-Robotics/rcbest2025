@@ -23,34 +23,21 @@ right_motor.spin(DirectionType.FORWARD)
 big_arm_motor.spin(DirectionType.FORWARD)
 small_arm_motor.spin(DirectionType.FORWARD)
 
-def bigarmup():
-    big_arm_motor.set_velocity(50, PERCENT)
-    wait(500, MSEC)
-    big_arm_motor.stop()
+def big_arm_grab():
+    #code
 
-def bigarmdown():
-    big_arm_motor.set_velocity(-50, PERCENT)
-    wait(500, MSEC)
-    big_arm_motor.stop()
+def big_arm_release():
+    #code
 
-def smallarmclockwise():
-    small_arm_motor.set_velocity(-50, PERCENT)
-    wait(500, MSEC)
-    big_arm_motor.stop()
+def small_arm_grab():
+    #code
 
-def smallarmcounterclockwise():
-    small_arm_motor.set_velocity(50, PERCENT)
-    wait(500, MSEC)
-    big_arm_motor.stop()
+def small_arm_release():
+    #code
 
 
 test = False
 run = True
-
-controller.buttonX.pressed(bigarmup)
-controller.buttonB.pressed(bigarmdown)
-controller.buttonY.pressed(smallarmclockwise)
-controller.buttonA.pressed(smallarmcounterclockwise)
 
 
 while run == True:
@@ -73,10 +60,22 @@ while run == True:
     if(pos1 == 0):
         big_arm_motor.set_velocity(pos2, PERCENT)
 
-    brain.screen.print("1: ",pos1,"; 2: ",pos2)
-    brain.screen.print("; 4: ",pos4,"; 3: ",pos3)
-    brain.screen.clear_row(1)
-    brain.screen.set_cursor(1,1)
+    if(controller.buttonR1.pressing()):
+        big_arm_grab()
+    
+    if(controller.buttonR2.pressing()):
+        big_arm_release()
+    
+    if(controller.buttonL1.pressing()):
+        small_arm_grab()
+    
+    if(controller.buttonL1.pressing()):
+        small_arm_release()
+        
+    #brain.screen.print("1: ",pos1,"; 2: ",pos2)
+    #brain.screen.print("; 4: ",pos4,"; 3: ",pos3)
+    #brain.screen.clear_row(1)
+    #brain.screen.set_cursor(1,1)
     
 
 
