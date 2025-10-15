@@ -24,6 +24,8 @@ body {
 	font-size: 18px;
 	background-color: #222;
 	color: #aaa;
+	margin: 0px;
+  	padding: 0px;
 }
 
 .simple-container {
@@ -71,7 +73,7 @@ h2 {
 h3 {
 	font-size: 30px;
 	line-height: 27px;
-	padding-top: px;
+	padding-top: 0px;
 
 
 }
@@ -108,7 +110,7 @@ li {
 aside,
 [class *= "sidebar"],
 [id *= "sidebar"] {
-	max-width: 90%;
+	max-width: 100%;
 	margin: 0 auto;
 	border: 1px solid lightgrey;
 	padding: 5px 15px;
@@ -186,11 +188,6 @@ ul {
   border-radius: 5px;
   display: inline-block;
   margin: 15px;
-}
-
-body {
-  margin: 0;
-  padding: 1rem;
 }
 
 
