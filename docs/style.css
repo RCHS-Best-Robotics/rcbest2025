@@ -199,6 +199,9 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust column width as needed */
   grid-template-rows: masonry; /* The key property for masonry layout */
   gap: 16px; /* Adjust gap between items */
+  aspect-ratio: 1 / 1; /* or 1 / 1, depending on your design */
+
+
 }
 
 .grid-item {
