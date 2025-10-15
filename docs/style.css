@@ -214,7 +214,10 @@ body {
 
 
 
-
+#normalimg{
+  height: 200px;
+  width: auto;
+}
 
 #navlogo {
   height: 50px;
