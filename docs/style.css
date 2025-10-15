@@ -186,3 +186,24 @@ img {
   display: inline-block;
   margin: 15px;
 }
+
+body {
+  margin: 0;
+  padding: 1rem;
+}
+
+
+
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust column width as needed */
+  grid-template-rows: masonry; /* The key property for masonry layout */
+  gap: 16px; /* Adjust gap between items */
+}
+
+.grid-item {
+  /* Basic styling for your items */
+  background-color: #7773ac21;
+  padding: 15px;
+  border-radius: 5px;
+}
