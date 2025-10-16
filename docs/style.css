@@ -203,6 +203,7 @@ ul {
 .grid-item {
   /* Basic styling for your items */
   background-color: #7773ac21;
+  max-height: 300px;
   padding: 15px;
   border-radius: 5px;
 }
