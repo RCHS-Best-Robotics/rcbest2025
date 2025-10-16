@@ -194,10 +194,15 @@ ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-rows: masonry;
-
   aspect-ratio: 1 / 1;
 
 
+}
+
+.masonry-grid img{
+  height: 300px;
+  width: auto;
+  border-radius: 5px;
 }
 
 .grid-item {
