@@ -23,17 +23,26 @@ right_motor.spin(DirectionType.FORWARD)
 big_arm_motor.spin(DirectionType.FORWARD)
 small_arm_motor.spin(DirectionType.FORWARD)
 
+servoBL = Servo(brain.three_wire_port.a)
+servoBR = Servo(brain.three_wire_port.c)
+servoSL = Servo(brain.three_wire_port.e)
+servoSR = Servo(brain.three_wire_port.g)
+
 def big_arm_grab():
-    #code
+    print("big arm grab")
+    servoBL.set_position(-43, DEGREES)
+    servoBR.set_position(12, DEGREES)
 
 def big_arm_release():
-    #code
+    print("big arm release")
+    servoBL.set_position(20, DEGREES)
+    servoBR.set_position(-50, DEGREES)
 
 def small_arm_grab():
-    #code
+    print("small arm grab")
 
 def small_arm_release():
-    #code
+    print("small arm release")
 
 
 test = False
@@ -48,7 +57,7 @@ while run == True:
     VfwdL = pos3
     VfwdR = -pos3
 
-    if pos4!=0:
+    if (pos4>40)or(pos4<-40):
         VfwdR = pos3 + pos4
         VfwdL = pos3 + pos4
 
@@ -71,7 +80,7 @@ while run == True:
     
     if(controller.buttonL1.pressing()):
         small_arm_release()
-        
+
     #brain.screen.print("1: ",pos1,"; 2: ",pos2)
     #brain.screen.print("; 4: ",pos4,"; 3: ",pos3)
     #brain.screen.clear_row(1)
