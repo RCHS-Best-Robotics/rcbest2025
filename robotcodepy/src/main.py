@@ -1,16 +1,6 @@
-# ---------------------------------------------------------------------------- #
-#                                                                              #
-# 	Module:       main.py                                                      #
-# 	Author:       aiden                                                        #
-# 	Created:      9/20/2025, 12:57:51 PM                                       #
-# 	Description:  V5 project                                                   #
-#                                                                              #
-# ---------------------------------------------------------------------------- #
-
 # Library imports
 from vex import *
 
-# Brain should be defined by default
 brain=Brain()
 controller = Controller()
 left_motor = Motor(Ports.PORT5, GearSetting.RATIO_18_1, True)
@@ -67,23 +57,40 @@ while run == True:
     pos2 = int(controller.axis2.position())
     pos3 = int(controller.axis3.position())
     pos4 = int(controller.axis4.position())
-    VfwdL = pos3
-    VfwdR = -pos3
-
-    if (pos4<20)and(pos4>-20):
-        VfwdR = pos3 + pos4
-        VfwdL = pos3 + pos4
+    VfwdR = 0
+    VfwdL = 0
 
 
-    
-    left_motor.set_velocity(VfwdL, PERCENT)
-    right_motor.set_velocity(VfwdR, PERCENT)
 
-    if ((pos1<20)and(pos1>-20))and((pos2>20)or(pos2<-20)):
-        big_arm_motor.set_velocity(pos2, PERCENT)
-    
+    if(abs(pos4)<20):
+        if(pos3>20):
+            VfwdR = 100
+            VfwdL = 100
+        if(pos3<-20):
+            VfwdR = -100
+            VfwdL = -100
+    elif(abs(pos3)<20):
+        if(pos4>20):
+            VfwdR = -100
+            VfwdL = 100
+        if(pos4<-20):
+            VfwdR = 100
+            VfwdL = -100
+
     else:
-        small_arm_motor.set_velocity(pos1, PERCENT)
+        VfwdR = pos3*(2/3) -pos4*(1/3)
+        VfwdL = pos3*(2/3) +pos4*(2/3)
+    
+    
+    
+
+    print("pos4",pos4)
+    print("pos3",pos3)
+    left_motor.set_velocity((VfwdL), PERCENT)
+    right_motor.set_velocity(-(VfwdR), PERCENT)
+
+    if(abs(pos1)<20):
+        big_arm_motor.set_velocity(pos2,PERCENT)
     
 
 
@@ -118,8 +125,6 @@ while test == True:
     pos2 = controller.axis2.position()
     pos3 = controller.axis3.position()
     pos4 = controller.axis4.position()
-    brain.screen.print("1: ",pos1,"; 2: ",pos2)
-    brain.screen.print("; 4: ",pos4,"; 3: ",pos3)
     wait(2000, MSEC)
     brain.screen.clear_row(1)
     brain.screen.set_cursor(1,1)
